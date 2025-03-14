@@ -1,13 +1,154 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  user-select: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  overflow: hidden;
+  background: #f8f9fa;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Holi Full Screen Container */
+.color-splash-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff5858);
+  overflow: hidden;
+}
+
+/* Holi Heading */
+.holi-heading {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 15px #ff4500, 0 0 25px #ff6347, 0 0 35px #ff8c00;
+  }
+  100% {
+    text-shadow: 0 0 25px #ff4500, 0 0 35px #ff6347, 0 0 45px #ff8c00;
+  }
+}
+
+/* Color Splash Effect */
+.splash {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  opacity: 0.9;
+  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.4);
+  animation: splash-animation 1.5s ease-out forwards;
+}
+
+@keyframes splash-animation {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+
+/* Sparkles Effect */
+.sparkle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  box-shadow: 0 0 20px white;
+  animation: sparkle-animation 2.5s infinite ease-in-out;
+}
+
+@keyframes sparkle-animation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Confetti Animation */
+.confetti {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: float 5s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-60px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Music Button */
+.music-button {
+  margin-top: 25px;
+  padding: 12px 25px;
+  font-size: 1.4rem;
+  background: #ff4081;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 64, 129, 0.4);
+}
+
+.music-button:hover {
+  background: #e91e63;
+  box-shadow: 0 5px 20px rgba(233, 30, 99, 0.5);
+}
+
+/* Responsive Fix */
+@media screen and (max-width: 768px) {
+  .holi-heading {
+    font-size: 2.8rem;
+  }
+
+  .music-button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
 }
